@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TechFixManager.master.cs" Inherits="TechFix.TechFixManager" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>TF Manager</title>
+    <link rel="stylesheet" href="~/css/Style.css" />
+    <script type="text/javascript">
+        function confirmLogout() {
+            return confirm("Are you sure you want to logout?");
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="common-header">
+            <div class="header-container">
+                <asp:Image ID="Image1" runat="server" Height="83px" ImageUrl="~/Images/TechFixLogo1.png" CssClass="common-logo" />
+                <asp:Label ID="Label1" runat="server" CssClass="common-company-name" Text="TechFix"></asp:Label>
+
+                   <div class="user-info-container">
+        <asp:Label ID="Label3" runat="server" Text="User ID:" CssClass="user-info-label"></asp:Label>
+        <asp:Label ID="lblUserId" runat="server" Text="" CssClass="user-info-label"></asp:Label>
+
+        <asp:Label ID="Label2" runat="server" Text="User Name:" CssClass="user-info-label"></asp:Label>
+        <asp:Label ID="lblWelcome" runat="server" Text="" CssClass="user-info-label"></asp:Label>
+
+        <asp:Label ID="Label4" runat="server" Text="User Role:" CssClass="user-info-label"></asp:Label>
+        <asp:Label ID="lblUserRole" runat="server" Text="" CssClass="user-info-label"></asp:Label>
+    </div>
+            </div>
+        </header>
+        <div class="common-sidebar">
+            <ul class="common-nav-menu">
+                <li><a href="ManagerHome.aspx">Home</a></li>
+                <li class="common-dropdown">
+                    <a href="javascript:void(0)" class="common-dropbtn">User Management</a>
+                    <div class="common-dropdown-content">
+                        <a href="ManagerAddUser.aspx">Add User</a>
+                        <a href="ManagerManageUser.aspx">Manage User</a>
+                    </div>
+                </li>
+                <li><a href="ManagerUpdateProfileForm.aspx">Profile</a></li>
+                <li>
+                     <a href="Login.aspx" onclick="return confirmLogout();">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div class="common-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <footer class="common-footer">
+            <p>&copy; 2024 TechFix. All rights reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>

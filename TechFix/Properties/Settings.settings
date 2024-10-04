@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TechFix.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TechFix_localhostInventory_InventoryManageService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44332/InventoryManageService.asmx</Value>
+    </Setting>
+    <Setting Name="TechFix_localhostSupAction_SupplierActionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44332/SupplierActionService.asmx</Value>
+    </Setting>
+    <Setting Name="TechFix_localhostRequest_RequestManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44332/RequestManagementService.asmx</Value>
+    </Setting>
+    <Setting Name="TechFix_localhostQuotations_QuotationsManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44332/QuotationsManagementService.asmx</Value>
+    </Setting>
+    <Setting Name="TechFix_localhostUser_UserManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44332/UserManagementService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

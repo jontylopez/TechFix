@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertSupplierAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="supplierID" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestID" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="actionStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSupplierActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertSupplierActionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSupplierAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="actionStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSupplierActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSupplierActionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="supplierID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestByUserIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertSupplierActionSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSupplierAction" />
+  </wsdl:message>
+  <wsdl:message name="InsertSupplierActionSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSupplierActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSupplierActionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSupplierAction" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSupplierActionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSupplierActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestByUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SupplierActionServiceSoap">
+    <wsdl:operation name="InsertSupplierAction">
+      <wsdl:input message="tns:InsertSupplierActionSoapIn" />
+      <wsdl:output message="tns:InsertSupplierActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplierAction">
+      <wsdl:input message="tns:UpdateSupplierActionSoapIn" />
+      <wsdl:output message="tns:UpdateSupplierActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestByUserID">
+      <wsdl:input message="tns:GetRequestByUserIDSoapIn" />
+      <wsdl:output message="tns:GetRequestByUserIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SupplierActionServiceSoap" type="tns:SupplierActionServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertSupplierAction">
+      <soap:operation soapAction="http://tempuri.org/InsertSupplierAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplierAction">
+      <soap:operation soapAction="http://tempuri.org/UpdateSupplierAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestByUserID">
+      <soap:operation soapAction="http://tempuri.org/GetRequestByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SupplierActionServiceSoap12" type="tns:SupplierActionServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertSupplierAction">
+      <soap12:operation soapAction="http://tempuri.org/InsertSupplierAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplierAction">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSupplierAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestByUserID">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SupplierActionService">
+    <wsdl:port name="SupplierActionServiceSoap" binding="tns:SupplierActionServiceSoap">
+      <soap:address location="https://localhost:44332/SupplierActionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SupplierActionServiceSoap12" binding="tns:SupplierActionServiceSoap12">
+      <soap12:address location="https://localhost:44332/SupplierActionService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
